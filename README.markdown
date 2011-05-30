@@ -1,3 +1,7 @@
+# DotVIM files maintenance
+
+Note: the commands assume that you are at the home (~) directory.
+
 ## First time configuration
 
 First time on this machine?
@@ -12,7 +16,7 @@ First time on this machine?
 
 ### Getting plugins
 
-	cd ~/.vim/bundle/<plugin>
+    cd ~/.vim
 	git submodule update --init
 
 ## Updating .vim
@@ -22,7 +26,7 @@ Want to get or make changes?
 ### Getting last version
 
     cd ~/.vim
-    git pull
+    git pull origin master
 
 ### Installing new plugin
 
