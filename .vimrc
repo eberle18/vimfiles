@@ -147,12 +147,17 @@ set scrolloff=4
 set wildmode=longest,list
 
 "set cindent " c-style indentation
-set shiftwidth=4 " # of spaces of auto indent
-set softtabstop=4 " # of spaces of <TAB> key
-set tabstop=4 " # of spaces erased when deleting a <TAB>
+set shiftwidth=4    " # of spaces of auto indent
+set softtabstop=4   " # of spaces of <TAB> key
+set tabstop=4       " # of spaces erased when deleting a <TAB>
+set expandtab       " Insert spaces instead of tabs
+set smarttab        " 'siftwidth' in front of a line
 
 " Always show a status bar
 set laststatus=2
+
+" Ignore case when search pattern is all lowercase
+set smartcase
 
 
 
@@ -176,7 +181,8 @@ nnoremap <F8> :cn<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
 " Tagbar
-let g:tagbar_sort = 0 " Display tags the same order they appear in the source file
+let g:tagbar_sort = 0      " Display tags the same order they appear in the source file
+let g:tagbar_autofocus = 1 " Change the focus to the Tagbar window whenever it is opened
 nnoremap <silent> <F10> :TagbarToggle<CR>
 
 " Use ctrl-[hjkl] to select the active split!
