@@ -28,6 +28,13 @@ Want to get or make changes?
     cd ~/.vim
     git pull origin master
 
+### Updating plugins
+
+    git submodule foreach '\
+    cd ~/.vim/$path;\
+    git checkout master;\
+    git pull'
+
 ### Installing new plugin
 
     cd ~/.vim
