@@ -167,7 +167,7 @@ set smartcase
 " Warning: <F1> is mapped to display help
 
 " Clear search highlighting
-nnoremap <silent> <F2> :nohlsearch<CR> 
+nnoremap <silent> <F2> :nohlsearch<CR>
 
 " Edit-compile-edit cycle shortcuts
 nnoremap <F3> :make<CR>
