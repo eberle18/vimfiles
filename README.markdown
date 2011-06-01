@@ -104,4 +104,5 @@ repository and commit the changes:
 ## References
 
 <http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/>
+
 <http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/>
