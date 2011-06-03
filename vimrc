@@ -194,5 +194,6 @@ nnoremap <silent> <C-L> <C-W>l
 
 " These are command mapping used as an alternative for when the function keys
 " are not available (on the macbook for instance)
+nnoremap <silent> <leader>q :nohlsearch<CR>
 nnoremap <silent> <leader>a :NERDTreeToggle<CR>
 nnoremap <silent> <leader>f :TagbarToggle<CR>
