@@ -10,7 +10,8 @@ and modification of vim files and plugins.
 This instructions will configure the .vim directory for the first time on our
 machine. If you are not Leandro Freitas but you want to get this files because
 you liked it (or because of any other reason), this is your place too, but
-maybe you will have to change the `<repository>` for the first command.
+you will have to replace `git@github.com:freitass/vimfiles.git` in the first
+command for `git://github.com/freitass/vimfiles.git`.
 
 First of all you have to clone the remote repository to our local machine:
 
