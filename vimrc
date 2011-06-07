@@ -182,6 +182,7 @@ nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
 " Tagbar
 let g:tagbar_sort = 0      " Display tags the same order they appear in the source file
+let g:tagbar_width = 30    " Set Tagbar window width to 30
 let g:tagbar_autofocus = 1 " Change the focus to the Tagbar window whenever it is opened
 nnoremap <silent> <F10> :TagbarToggle<CR>
 
