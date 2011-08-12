@@ -127,6 +127,8 @@ endif " has("autocmd")
 """""""""""""""""""""
 " Personal settings "
 """""""""""""""""""""
+" Latex file encoding
+autocmd FileType plaintex setlocal fileencoding=utf8
 
 " Color scheme
 colorscheme darkblue
@@ -147,9 +149,9 @@ set scrolloff=4
 set wildmode=longest,list
 
 "set cindent " c-style indentation
-set shiftwidth=4    " # of spaces of auto indent
-set softtabstop=4   " # of spaces of <TAB> key
-set tabstop=4       " # of spaces erased when deleting a <TAB>
+set shiftwidth=2    " # of spaces of auto indent
+set softtabstop=2   " # of spaces of <TAB> key
+set tabstop=2       " # of spaces erased when deleting a <TAB>
 set expandtab       " Insert spaces instead of tabs
 set smarttab        " 'siftwidth' in front of a line
 
