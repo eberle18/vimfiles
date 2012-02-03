@@ -25,14 +25,14 @@ set nocompatible
 set backspace=indent,eol,start
 
 " if has("vms")
-"   set nobackup		" do not keep a backup file, use versions instead
+"   set nobackup  " do not keep a backup file, use versions instead
 " else
 "   set backup		" keep a backup file
 " endif
 set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set ruler		      " show the cursor position all the time
+set showcmd		    " display incomplete commands
+set incsearch		  " do incremental searching
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -53,7 +53,6 @@ endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-
 	" Enable file type detection.
 	" Use the default filetype settings, so that mail gets 'tw' set to 72,
 	" 'cindent' is on in C files, etc.
@@ -77,50 +76,11 @@ if has("autocmd")
 
 	augroup END
 
-	" Autocommands for c and c++ filetypes.
-	augroup cpp
-		autocmd!
-
-		" Reads the template file replacing the tags by the actual
-		" information and insert the result at the beginning of the buffer. At
-		" the end, creates two blank lines at the end of the file and
-		" position the cursor at the first one.
-		function! s:insert_description()
-			let template = $HOME . "/.vim/template/cpp.template"
-			let file_name = expand("%:t") " Get file name without path
-			let date = strftime("%Y") " Get the current year in format YYYY
-			let i = 0
-			for line in readfile(template)
-				let line = substitute(line, "<file_name>", file_name, "ge")
-				let line = substitute(line, "<date>", date, "ge")
-				call append(i, line)
-				let i += 1
-			endfor
-			execute "normal! Go\<Esc>k"
-		endfunction
-		autocmd BufNewFile *.{c++,cpp,cc,c,h,hpp} call <SID>insert_description()
-
-		" Inserts guards on header files. The headers are included starting at
-		" the current cursor line. One line if left blank between #define and
-		" #endif tags and is where the cursor is released at the end of the
-		" execution.
-		function! s:insert_guard()
-			let guard_name = "__" . substitute(toupper(expand("%:t")), "\\.", "_", "g") . "__"
-			execute "normal! i#ifndef " . guard_name
-			execute "normal! o#define " . guard_name . " "
-			execute "normal! o#endif /* " . guard_name . " */"
-			execute "normal! O\<Esc>"
-		endfunction
-		autocmd BufNewFile *.{h,hpp} call <SID>insert_guard()
-
-	augroup END
-
 else
 
-	set autoindent		" always set autoindenting on
+  set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
-
 
 
 
@@ -133,34 +93,19 @@ autocmd FileType plaintex setlocal fileencoding=utf8
 " Color scheme
 colorscheme darkblue
 
-" Disable the creation of backup files (the ones ending with ~)
-set nobackup
+set nobackup               " Disable the creation of backup files (the ones ending with ~)
+set mouse=a                " enable mouse 'all'
+set number                 " line numbers
+set scrolloff=4            " Keep the cursor away from top/bottom
+set wildmode=longest,list  " TAB completion (such as bash)
+set laststatus=2           " Always show a status bar
+set smartcase              " Ignore case when search pattern is all lowercase
 
-" enable mouse 'all'
-set mouse=a
-
-" line numbers
-set number
-
-" Keep the cursor away from top/bottom
-set scrolloff=4
-
-" TAB completion (such as bash)
-set wildmode=longest,list
-
-"set cindent " c-style indentation
-set shiftwidth=2    " # of spaces of auto indent
-set softtabstop=2   " # of spaces of <TAB> key
-set tabstop=2       " # of spaces erased when deleting a <TAB>
-set expandtab       " Insert spaces instead of tabs
-set smarttab        " 'siftwidth' in front of a line
-
-" Always show a status bar
-set laststatus=2
-
-" Ignore case when search pattern is all lowercase
-set smartcase
-
+set shiftwidth=2           " # of spaces of auto indent
+set softtabstop=2          " # of spaces of <TAB> key
+set tabstop=2              " # of spaces erased when deleting a <TAB>
+set expandtab              " Insert spaces instead of tabs
+set smarttab               " 'siftwidth' in front of a line
 
 
 """"""""""""""""
@@ -194,9 +139,8 @@ nnoremap <silent> <C-J> <C-W>j
 nnoremap <silent> <C-H> <C-W>h
 nnoremap <silent> <C-L> <C-W>l
 
-
 " These are command mapping used as an alternative for when the function keys
-" are not available (on the macbook for instance)
+" are not available (i.e. on the macbook)
 nnoremap <silent> <leader>q :nohlsearch<CR>
 nnoremap <silent> <leader>a :NERDTreeToggle<CR>
 nnoremap <silent> <leader>f :TagbarToggle<CR>
