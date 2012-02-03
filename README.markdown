@@ -9,9 +9,9 @@ and modification of vim files and plugins.
 
 This instructions will configure the .vim directory for the first time on our
 machine. If you are not Leandro Freitas but you want to get this files because
-you liked it (or because of any other reason), this is your place too, but
-you will have to replace `git@github.com:freitass/vimfiles.git` in the first
-command for `git://github.com/freitass/vimfiles.git`.
+you liked it (or because of any other reason), this is your place too; in that
+case, just replace `git@github.com:freitass/vimfiles.git` in the first command
+for `git://github.com/freitass/vimfiles.git`.
 
 First of all you have to clone the remote repository to our local machine:
 
@@ -28,7 +28,7 @@ submodules) are empty. To get their content, init and update the submodules
 running the following command:
 
     cd ~/.vim
-	git submodule update --init
+    git submodule update --init
 
 And we are done. Now, maybe it is a good idea to update the plugins.
 
@@ -36,16 +36,15 @@ And we are done. Now, maybe it is a good idea to update the plugins.
 
 This section will guide you through the steps to install a new plugin. You are
 encouraged to install plugins this way so you can easily get the lastest
-changes as they are being committed by the developer. Although it is easy to
-update, Git doesn't do it automatically, so it is very important to read also
-the instructions to update the plugins. The plugins are managed with *Pathogen*,
-so each plugin is installed inside its own directory inside `bundle`.
+changes as they are being committed by the developer (instructions in *Update
+installed plugins*). The plugins are managed with *Pathogen*, so each plugin is
+installed inside its own directory inside `bundle`.
 
 From the `~/.vim` directory, add the new plugin repository as a submodule of
 the current repository with the command below, where `<plugin-repository>` is
 the address to the plugin repository (oh, really?) and the `<plugin-name>` is
-the name of the directory, inside `bundle` where it will be installed and it is
-generally the same as the repository name:
+(guess what?) the name of the directory, inside `bundle` where it will be
+installed and it is generally the same as the repository name:
 
     cd ~/.vim
     git submodule add <plugin-repository> bundle/<plugin-name>
