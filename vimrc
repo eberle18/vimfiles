@@ -91,7 +91,7 @@ endif " has("autocmd")
 autocmd FileType plaintex setlocal fileencoding=utf8
 
 " Color scheme
-colorscheme desert
+colorscheme wombat
 
 set nobackup               " Disable the creation of backup files (the ones ending with ~)
 set mouse=a                " enable mouse 'all'
