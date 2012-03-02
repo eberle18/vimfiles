@@ -49,9 +49,9 @@ installed and it is generally the same as the repository name:
     cd ~/.vim
     git submodule add <plugin-repository> bundle/<plugin-name>
 
-When the submodules are changes, Git catch those changes as modifications, so
-it is important to commit those changes and push to the remote repository so
-that those changes can be accessed from other machines:
+When the submodules are changed, Git catch those changes as modifications, so
+it is important to commit them and push to the remote repository so that they
+can be accessed from other machines:
 
     git commit -m "Install <plugin-name>"
     git push
