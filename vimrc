@@ -87,6 +87,12 @@ endif " has("autocmd")
 """""""""""""""""""""
 " Personal settings "
 """""""""""""""""""""
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+ 
+
 " Latex file encoding
 autocmd FileType plaintex setlocal fileencoding=utf8
 
