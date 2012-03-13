@@ -13,9 +13,6 @@
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
-[submodule "bundle/todo.txt"]
-	path = bundle/todo.txt
-	url = git@github.com:freitass/todo.txt-vim.git
 [submodule "bundle/wombat"]
 	path = bundle/wombat
 	url = https://github.com/vim-scripts/Wombat.git
