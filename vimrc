@@ -97,7 +97,8 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 autocmd FileType plaintex setlocal fileencoding=utf8
 
 " Color scheme
-colorscheme wombat
+set background=light
+colorscheme solarized
 
 set nobackup               " Disable the creation of backup files (the ones ending with ~)
 set mouse=a                " enable mouse 'all'
