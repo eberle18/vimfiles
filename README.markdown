@@ -1,5 +1,3 @@
-
-
 The objective of this file is to maintain the .vim directory in order and up to
 date between all the machines where it is used. Here we will find the
 instructions necessary to complete common tasks related to insertion, remotion
