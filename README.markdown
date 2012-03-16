@@ -1,4 +1,4 @@
-# DotVIM files maintenance
+
 
 The objective of this file is to maintain the .vim directory in order and up to
 date between all the machines where it is used. Here we will find the
@@ -56,7 +56,7 @@ can be accessed from other machines:
     git commit -m "Install <plugin-name>"
     git push
 
-## Update installed plugins
+## Update (just) installed plugins
 
 When you add a submodule, the most recent commit of the submodule is stored in
 the main repository’s index. That means that as the code in the submodule’s
@@ -100,6 +100,25 @@ repository and commit the changes:
     cd ../..
     git add .
     git commit -m "Update todo.txt"
+
+## Update .vim dir (synchronize with remote repository)
+
+As you may have noticed, plugins can be installed through any clone of this
+repository and we need a way to propagate the modifications made in one clone
+to the others. For a standard git repository, a mere `git pull` would suffice
+for the task. However, to catch up with the new installed plugins (submodules)
+one more thing is necessary:
+
+    git pull
+    git submodule update --init
+
+The first command will fetch and merge the lastest modifications made at the
+repository including -- if a plugin has been recently installed in another
+machine -- the folder of the plugin but not its contents. If you issue `git
+pull` and check for the contents of the directory `bundle/<new-plugin>`, you
+will see that it is empty. To fill the dir with the correct information you
+need to issue the second command, just like if you were cloning the repository
+for the first time (see *First time configuration*).
 
 ## References
 
