@@ -44,13 +44,6 @@ map Q gq
 " text is lost and it only works for putting the current register.
 "vnoremap p "_dp
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-	syntax on
-	set hlsearch
-endif
-
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 	" Enable file type detection.
@@ -96,9 +89,19 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Latex file encoding
 autocmd FileType plaintex setlocal fileencoding=utf8
 
-" Color scheme
-set background=light
-colorscheme solarized
+" Appearance
+if has("gui_running")
+  syntax on
+  set hlsearch
+  set background=light
+  colorscheme solarized
+  if has("gui_macvim")
+    set guifont=Menlo:h12
+  endif
+else
+  syntax off
+  set nohlsearch
+endif
 
 set nobackup               " Disable the creation of backup files (the ones ending with ~)
 set mouse=a                " enable mouse 'all'
@@ -151,3 +154,5 @@ nnoremap <silent> <C-L> <C-W>l
 nnoremap <silent> <leader>q :nohlsearch<CR>
 nnoremap <silent> <leader>a :NERDTreeToggle<CR>
 nnoremap <silent> <leader>f :TagbarToggle<CR>
+nnoremap <silent> <leader>s :Gstatus<CR>
+
