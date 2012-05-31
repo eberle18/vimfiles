@@ -3,7 +3,7 @@
 """""""""""""""""""""""""""""""""""" 
 
 " Needed on some linux distros.
-filetype off 
+filetype off
 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -156,3 +156,19 @@ nnoremap <silent> <leader>a :NERDTreeToggle<CR>
 nnoremap <silent> <leader>f :TagbarToggle<CR>
 nnoremap <silent> <leader>s :Gstatus<CR>
 
+" Autocomplete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
+
+" Autocomplete for ruby
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
