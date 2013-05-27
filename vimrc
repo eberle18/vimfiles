@@ -90,18 +90,18 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 autocmd FileType plaintex setlocal fileencoding=utf8
 
 " Appearance
-if has("gui_running")
+"if has("gui_running")
   syntax on
   set hlsearch
   set background=light
-  colorscheme solarized
+  colorscheme koehler
   if has("gui_macvim")
     set guifont=Menlo:h12
   endif
-else
-  syntax off
-  set nohlsearch
-endif
+"else
+"  syntax off
+"  set nohlsearch
+"endif
 
 set nobackup               " Disable the creation of backup files (the ones ending with ~)
 set mouse=a                " enable mouse 'all'
@@ -172,3 +172,24 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
+
+"VDHL test
+let g:tagbar_type_vhdl = {
+    \ 'ctagstype': 'vhdl',
+    \ 'kinds' : [
+        \'d:prototypes',
+        \'b:package bodies',
+        \'e:entities',
+        \'a:architectures',
+        \'t:types',
+        \'p:processes',
+        \'f:functions',
+        \'r:procedures',
+        \'c:constants',
+        \'T:subtypes',
+        \'r:records',
+        \'C:components',
+        \'P:packages',
+        \'l:locals'
+    \]
+\}
